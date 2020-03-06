@@ -16,7 +16,7 @@ public class Main {
 
         //for a lot of this I need try and catch's, as seen by error message:
         try{
-            URL inboundURL = new URL("https://bpdts-test-app.herokuapp.com");
+            URL inboundURL = new URL("https://bpdts-test-app.herokuapp.com/instructions");
 
             HttpURLConnection myConnection = (HttpURLConnection) inboundURL.openConnection();
 
