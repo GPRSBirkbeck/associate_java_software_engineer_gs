@@ -1,8 +1,62 @@
 package com.AssocJava.apiclass;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ApiClass {
 
+    public static StringBuffer getDataFromAPI(String myURL){
+
+        //i declare this variable outside the try so that it can be returned.
+        StringBuffer content = new StringBuffer();
+
+        //below I am using java.net library to make a HTTP request to get the data from an API, and the API will be the input .
+        try{
+
+
+            URL inboundURL = new URL(myURL);
+
+            HttpURLConnection myConnection = (HttpURLConnection) inboundURL.openConnection();
+
+
+            //here I set the request method to get.
+            myConnection.setRequestMethod("GET");
+
+            //i need to set timeout values below:
+            //these values both represent ten seconds
+            myConnection.setConnectTimeout(10000);
+            myConnection.setReadTimeout(10000);
+
+            //the response code for swagger should be 200 if happy:
+            int responseStatus = myConnection.getResponseCode();
+
+            Reader streamReader = null;
+
+            //now let's get the response of the request, and place in a string to be printed
+            BufferedReader inputStuff = new BufferedReader(
+                    new InputStreamReader(myConnection.getInputStream())
+            );
+            String inputText;
+            //below we keep taking input until there's no more input to take in
+            while ((inputText = inputStuff.readLine()) != null){
+                content.append(inputText);
+            }
+            inputStuff.close();
+
+            myConnection.disconnect();
+            return content;
+        }
+        catch (MalformedURLException inbURL){
+            System.out.print("error with my URL - bad URL type");
+        }
+        catch(IOException ioExc){
+            System.out.print("IO exception kicked off");
+        }
+        return content;
+
+    }
 
 
 }
+
