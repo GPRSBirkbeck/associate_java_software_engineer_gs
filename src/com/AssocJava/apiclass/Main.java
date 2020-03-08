@@ -19,13 +19,23 @@ public class Main {
         JSONArray allUserJA = ApiClass.getDataFromAPI(allUsers);
         //this string is the URL for all users that have London listed as their city
         String londonUsers = "https://bpdts-test-app.herokuapp.com/city/London/users";
-        //this StringBuffer stores the data of the London based users
+        //this JSONArray stores the data of the London based users
         JSONArray londonUserJA = ApiClass.getDataFromAPI(londonUsers);
-        JSONObject currentJo = (JSONObject) (londonUserJA.get(0));
-        System.out.print(currentJo.get("latitude"));
-        System.out.println(currentJo);
 
 
+        /**
+         * upon testing several of the results, not only can users say they live in London and live elsewhere
+         *
+         * they can also live in other Londons, for example Tiffi Colberston (id = 688).
+         * therefore I want to add users from our general allUser array to my LondonUsers Array
+         */
+        JSONArray additionJA = distanceClass.closeToLondon(allUserJA);
+
+        londonUserJA.add(additionJA);
+
+        for(int i = 0; i<londonUserJA.size(); i++) {
+           // System.out.println(londonUserJA.get(i));
+        }
 
     }
 }
