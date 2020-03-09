@@ -20,7 +20,6 @@ public class ApiClass {
         //below I am using java.net library to make a HTTP request to get the data from an API, and the API will be the input .
         try{
 
-
             URL inboundURL = new URL(myURL);
 
             HttpURLConnection myConnection = (HttpURLConnection) inboundURL.openConnection();
