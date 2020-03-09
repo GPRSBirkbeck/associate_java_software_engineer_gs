@@ -1,6 +1,4 @@
 package com.AssocJava.apiclass;
-import netscape.javascript.JSObject;
-import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 public class Main {
@@ -29,12 +27,24 @@ public class Main {
          * they can also live in other Londons, for example Tiffi Colberston (id = 688).
          * therefore I want to add users from our general allUser array to my LondonUsers Array
          */
-        JSONArray additionJA = distanceClass.closeToLondon(allUserJA);
+        JSONArray additionJA = DistanceClass.closeToLondon(allUserJA);
+        JSONArray removalJA = new JSONArray();
 
+
+        for(int i = 0; i<additionJA.size();i++){
+            JSONObject additionJo = (JSONObject) (additionJA.get(i));
+            for(int j = 0; j<londonUserJA.size(); j++){
+                JSONObject londonJo = (JSONObject) (londonUserJA.get(j));
+                if(additionJo.get("id") ==londonJo.get("id")){
+                    removalJA.add(additionJo);
+                }
+            }
+        }
+        additionJA.remove(removalJA);
         londonUserJA.add(additionJA);
 
         for(int i = 0; i<londonUserJA.size(); i++) {
-           // System.out.println(londonUserJA.get(i));
+            System.out.println(londonUserJA.get(i));
         }
 
     }
