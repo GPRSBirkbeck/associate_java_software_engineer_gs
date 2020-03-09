@@ -24,11 +24,6 @@ class DistanceClassTest {
         testObject.put("latitude", 53.32055555555556);
         testObject.put("longitude", -1.7297222222222221);
 
-
-
-            String a = "Hi", b = " there";
-            String c = "Hi there";
-
             assertEquals(Math.round(DistanceClass.haversineDistance(testObject, earthRadiusKilometres,londonLat,londonLong)*1000)/1000,Math.round(2.0043678382716137*1000)/1000);
 
 

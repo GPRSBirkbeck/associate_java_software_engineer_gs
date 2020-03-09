@@ -4,7 +4,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 
@@ -13,11 +12,10 @@ public class ApiClass {
 
     public static JSONArray getDataFromAPI(String myURL){
 
-        //i declare this variable outside the try so that it can be returned.
         StringBuffer content = new StringBuffer();
         JSONArray myExportJo = new JSONArray();
 
-        //below I am using java.net library to make a HTTP request to get the data from an API, and the API will be the input .
+        //below I am using java.net library to make a HTTP request for the data from the API.
         try{
 
             URL inboundURL = new URL(myURL);

@@ -40,12 +40,10 @@ public class DistanceClass {
         return distanceToLondon;
     }
 
-
     /**
      * the method below is used to calculate distance between users from allUser array and a fixed point
      * for this fixed point, I have created a variable, and I compare the distance between that variable and our LatLeng
      */
-
     public static JSONArray closeToLondon(JSONArray inputJA){
 
         double earthRadiusKilometres = 6371;
@@ -56,18 +54,15 @@ public class DistanceClass {
         JSONArray inputJA1 = inputJA;
         JSONArray outputJA = new JSONArray();
 
-        for(int i = 0; i<5;i++){
+        for(int i = 0; i<inputJA1.size();i++){
             JSONObject currentJo = (JSONObject) (inputJA1.get(i));
-            double yourMiles = DistanceClass.haversineDistance(currentJo, earthRadiusKilometres, londonLatitude, londonLongitude);
+            double yourMiles = DistanceClass.haversineDistance(currentJo, earthRadiusMiles, londonLatitude, londonLongitude);
 
-            if(yourMiles<=50){
+            if(yourMiles<=1000){
                 outputJA.add(currentJo);
-                System.out.println(currentJo);
             }
         }
-
         return outputJA;
-
     }
 }
 
