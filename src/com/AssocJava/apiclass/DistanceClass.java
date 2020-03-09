@@ -58,7 +58,7 @@ public class DistanceClass {
             JSONObject currentJo = (JSONObject) (inputJA1.get(i));
             double yourMiles = DistanceClass.haversineDistance(currentJo, earthRadiusMiles, londonLatitude, londonLongitude);
 
-            if(yourMiles<=1000){
+            if(yourMiles<=3963){
                 outputJA.add(currentJo);
             }
         }
