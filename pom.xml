@@ -8,5 +8,10 @@
     <artifactId>Associate_Java_Software_ Engineer_Gregory_Smith_API_London</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>1.13</maven.compiler.source>
+        <maven.compiler.target>1.13</maven.compiler.target>
+    </properties>
+
     
 </project>
