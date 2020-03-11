@@ -31,7 +31,7 @@ public class Main {
         JSONArray postRemovalArray = DuplicatesClass.removeDuplicates(londonUserJA, additionJA);
         JSONArray finalArray = DuplicatesClass.addUsersPostDuplication(londonUserJA, postRemovalArray);
 
-        System.out.println(finalArray);
+        //System.out.println(finalArray);
         System.out.println(finalArray.size());
 
 
