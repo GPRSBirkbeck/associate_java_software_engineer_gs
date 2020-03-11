@@ -8,21 +8,24 @@ public class DuplicatesClass {
 
         System.out.println(additionArray.size());
         JSONArray removalJA = new JSONArray();
+        JSONArray copyJA = additionArray;
 
 
-        for(int i = 0; i<additionArray.size(); i++){
+        for(int i = additionArray.size()-1; i>=0; i--){
             JSONObject additionJo = (JSONObject) (additionArray.get(i));
+            JSONObject copyJo = (JSONObject) (copyJA.get(i));
             int addJoId = Integer.parseInt(additionJo.get("id").toString());
-            for(int j = 0; j<londonArray.size(); j++){
+            for(int j = londonArray.size()-1; j>=0; j--){
                 JSONObject londonJo = (JSONObject) (londonArray.get(j));
                 int lonJoId = Integer.parseInt(londonJo.get("id").toString());
                 if(addJoId == lonJoId){
-                    removalJA.add(additionJo);
+                    copyJA.remove(copyJo);
                 }
             }
         }
-        additionArray.remove(removalJA);
-        System.out.println(removalJA.size());
+
+        additionArray = copyJA;
+
 
         return additionArray;
     }
