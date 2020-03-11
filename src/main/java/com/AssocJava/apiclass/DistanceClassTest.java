@@ -28,8 +28,5 @@ class DistanceClassTest {
 
 
     }
-    /**
-     * to a test to check whether all users are within one globe's distance from london. If they are not, the formula is broken.
-     */
 
 }
