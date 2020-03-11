@@ -30,8 +30,8 @@ public class Main {
         JSONArray additionJA = DistanceClass.closeToLondon(allUserJA);
         JSONArray postRemovalArray = DuplicatesClass.removeDuplicates(londonUserJA, additionJA);
         JSONArray finalArray = DuplicatesClass.addUsersPostDuplication(londonUserJA, postRemovalArray);
-
-        //System.out.println(finalArray);
+//testpush
+        System.out.println(finalArray);
         System.out.println(finalArray.size());
 
 
