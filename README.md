@@ -2,7 +2,7 @@
 My application for online recruitment test
 
 ## Installation
-Download these files, and then run in the IDE of your choice (Intellij in my case).
+Download this repository, and then run in the IDE of your choice (Intellij in my case).
 
 ## Approach to the problem
 to tackle this problem, I started by setting up a URLstream to bring in data from two Get requests;
