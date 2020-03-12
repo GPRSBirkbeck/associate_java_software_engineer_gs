@@ -3,6 +3,7 @@ My application for online recruitment test
 
 ## Installation
 Download this repository, and then run in the IDE of your choice (Intellij in my case).
+Then head over to http://localhost:8080/closeToCity for my API.
 
 ## Approach to the problem
 to tackle this problem, I started by setting up a URLstream to bring in data from two Get requests;
@@ -19,8 +20,18 @@ I removed duplicates, and returned that list in my API.
 another way of tackling the distance problem could have been by using IP addresses, however I imagined people travel and also use VPNs, so I didnt consider these as robust as latitudes and longitudes.
 That said, I believe using IP addresses is an interesting alternative.
 
-## API spec
-Insert information on the API spec I used here
+## Future versions:
+Although I have built an API which aims to output users within 50 miles of London and those registered in London, below I provide some information on what I would do in the future to improve the system.
 
-## UI information
-Insert information on the UI I used here
+### Other London functionality:
+In the dataset provided, a user was registered to a "London" outside the UK, and in future versions I would build in functionality for finding users near other cities called London.
+
+### API spec
+In future iterations, I would make the API a Swaggger Spec API, as was done in the example provided by DWP.
+
+### UI information
+In future iterations, I would use Swagger UI, as was used in the example provided by DWP.
+
+
+### Hosting
+In future iterations, I would host the API online, for example on Heroku, as was done in the example provided by DWP.
