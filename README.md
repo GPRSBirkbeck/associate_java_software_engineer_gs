@@ -20,10 +20,10 @@ I removed duplicates, and returned that list in my API.
 another way of tackling the distance problem could have been by using IP addresses, however I imagined people travel and also use VPNs, so I didnt consider these as robust as latitudes and longitudes.
 That said, I believe using IP addresses is an interesting alternative.
 
-## Future versions:
+## Future versions
 Although I have built an API which aims to output users within 50 miles of London and those registered in London, below I provide some information on what I would do in the future to improve the system.
 
-### Other London functionality:
+### Other London functionality
 In the dataset provided, a user was registered to a "London" outside the UK, and in future versions I would build in functionality for finding users near other cities called London.
 
 ### API spec
